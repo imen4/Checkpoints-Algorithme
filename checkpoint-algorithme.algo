@@ -11,11 +11,11 @@ BEGIN
    if(sentence[i]:= not".") THEN
       IF (sentence[i]:= " ") THEN
         numWords := numWords + 2;
-      ELSE_IF (sentence[i]:= "a"or "e"or "i"or "o" or"u") THEN
-        numVowels := numVowels+1;
-      ELSE
-        numCarac := numCarac + 1 ;
       END_IF
+      IF (sentence[i]:= "a"or "e"or "i"or "o" or"u") THEN
+        numVowels := numVowels+1;
+      END_IF
+     numCarac := numCarac + 1 ;
      i := i+1;
    ELSE
     Write(numCarac)
