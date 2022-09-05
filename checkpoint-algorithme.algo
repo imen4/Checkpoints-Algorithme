@@ -1,0 +1,31 @@
+ALGORITHM read_sentence
+VAR
+    sentence: STRING := "I try and I try and if it's good thank Allah. If not keep trying Allah help me." ;
+    numCarac: INTEGER :=0;
+    numWords: INTEGER :=0;
+    numVowels: INTEGER :=0;
+    i := INTEGER :=0;
+BEGIN
+  
+  WHILE (i< sentence.lenght) DO
+   if(sentence[i]:= not".") THEN
+      IF (sentence[i]:= " ") THEN
+        numWords := numWords + 2;
+      ELSE_IF (sentence[i]:= "a"or "e"or "i"or "o" or"u") THEN
+        numVowels := numVowels+1;
+      ELSE
+        numCarac := numCarac + 1 ;
+      END_IF
+     i := i+1;
+   ELSE
+    Write(numCarac)
+    Write(numWords)
+    Write(numVowels)
+    numCarac:=0;
+    numWords:=0;
+    numVowels:=0;
+   END_IF
+  END_WHILE
+
+
+END
