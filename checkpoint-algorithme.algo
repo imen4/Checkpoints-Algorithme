@@ -12,7 +12,7 @@ BEGIN
       IF (sentence[i]:= " ") THEN
         numWords := numWords + 1;
       END_IF
-      IF (sentence[i]:= "a"or "e"or "i"or "o" or"u") THEN
+      IF (sentence[i]:= "a"or "e"or "i"or "o" or"u" or "A"or "E"or "I"or "O" or"U") THEN
         numVowels := numVowels+1;
       END_IF
      numCarac := numCarac + 1 ;
