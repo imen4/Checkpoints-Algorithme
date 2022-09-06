@@ -19,7 +19,7 @@ BEGIN
      i := i+1;
    ELSE
     Write(numCarac)
-    Write(numWords)
+    Write(numWords + 1)
     Write(numVowels)
     numCarac:=0;
     numWords:=0;
