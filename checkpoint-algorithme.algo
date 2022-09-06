@@ -10,7 +10,7 @@ BEGIN
   WHILE (i< sentence.lenght) DO
    if(sentence[i]:= not".") THEN
       IF (sentence[i]:= " ") THEN
-        numWords := numWords + 2;
+        numWords := numWords + 1;
       END_IF
       IF (sentence[i]:= "a"or "e"or "i"or "o" or"u") THEN
         numVowels := numVowels+1;
