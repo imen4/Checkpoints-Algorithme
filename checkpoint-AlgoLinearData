@@ -1,0 +1,71 @@
+ALGORITHM array_set
+VAR
+    set1 : ARRAY_OF INTEGER[]; 
+    set2 : ARRAY_OF INTEGER[]; 
+    diff: ARRAY_OF INTEGER[]; 
+    match: ARRAY_OF INTEGER[]; 
+    found: boolean;
+    sum: INTEGER :=0;
+    i, j := INTEGER :=0;
+BEGIN
+/*difference between set1 and set2*/
+ FOR i FROM 0 TO set1.length-1 STEP 1  DO
+    found = false;
+  FOR j FROM 0 TO set2.length-1 STEP 1  DO
+   IF (set1[i] := set2[j]) THEN
+      found = true;
+      break; 
+    END_IF
+   END_FOR
+
+  IF(found := false) THEN
+   diff.push(set1[i]);
+  END_IF
+ END_FOR
+
+/*difference between set2 and set1*/
+FOR i FROM 0 TO set2.length-1 STEP 1  DO
+    found = false;
+  FOR j FROM 0 TO set1.length-1 STEP 1  DO
+   IF (set2[i] := set1[j]) THEN
+      found = true;
+      break; 
+    END_IF
+   END_FOR
+
+  IF(found := false) THEN
+   diff.push(set2[i]);
+  END_IF
+ END_FOR
+
+ /*sum of array diff*/
+ FOR i FROM 0 TO diff.length-1 STEP 1  DO
+    sum := sum + diff[i];
+ END_FOR
+ Write("sum of distinct elements:=", sum)
+ sum:=0;
+
+
+/*2 éme méthode "indexOf"*/
+/*matching elements between set1 and set2*/
+FOR i FROM 0 TO set1.length-1 STEP 1  DO
+   IF (set2.indexOf(set1[i]) > -1) THEN
+      match.push(set1[i]);
+    END_IF
+END_FOR
+
+/*matching elements between set2 and set1*/
+FOR i FROM 0 TO set2.length-1 STEP 1  DO
+   IF (set1.indexOf(set2[i]) > -1) THEN
+      match.push(set2[i]);
+    END_IF
+END_FOR
+
+/*sum of array match*/
+ FOR i FROM 0 TO match.length-1 STEP 1  DO
+    sum := sum + match[i];
+ END_FOR
+ Write("sum of matching elements:=", sum)
+ 
+
+END
