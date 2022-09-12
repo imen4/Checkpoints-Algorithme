@@ -12,21 +12,25 @@ BEGIN
         dot := dot + v1[i]*v2[i];
     END_WHILE
 END
+/* read elem of tab*/
+PROCEDURE read_array(var t: ARRAY_OF INTEGER)
+VAR
+    i: INTEGER;
+BEGIN
+    FOR i FROM 0 TO t.length-1 STEP 1  DO
+        read(t[i])
+    END_FOR
+END
 
 ALGORITHM orth_vectors
 VAR
     v1,v2 : ARRAY_OF INTEGER;
     dot : INTEGER;
-    n1,n2 : INTEGER;
 BEGIN
-    // read size of elements v1
-    n1 := read_size(v1);
     //read elements of v1
-    read_array(n1,v1);
-    // read size of elements v2
-    n2 := read_size(v2);
+    read_array(v1);
     //read elements of v2
-    read_array(n2,v2);
+    read_array(v2);
     
     dot_product(v1,v2,dot);
     IF (dot := 0) THEN
@@ -53,20 +57,25 @@ BEGIN
     RETURN dot;
 END
 
+/* read elem of tab*/
+PROCEDURE read_array(var t: ARRAY_OF INTEGER)
+VAR
+    i: INTEGER;
+BEGIN
+    FOR i FROM 0 TO t.length-1 STEP 1  DO
+        read(t[i])
+    END_FOR
+END
+
 ALGORITHM orth_vectors
 VAR
     v1,v2 : ARRAY_OF INTEGER;
     dot : INTEGER;
-    n1,n2 : INTEGER;
 BEGIN
-    // read size of elements v1
-    n1 := read_size(v1);
     //read elements of v1
-    read_array(n1,v1);
-    // read size of elements v2
-    n2 := read_size(v2);
+    read_array(v1);
     //read elements of v2
-    read_array(n2,v2);
+    read_array(v2);
 
     dot := dot_product(v1,v2);
     IF (dot := 0) THEN
