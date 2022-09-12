@@ -1,0 +1,51 @@
+PROCEDURE InsertionSort(VAR tab : ARRAY_OF INTEGER)
+VAR
+    unsortedElem : INTEGER;
+    i,j : INTEGER;
+BEGIN
+    /*Select the first unsorted element */
+    FOR i FROM 1 TO tab.length-1 STEP 1  DO
+        unsortedElem := tab[i];
+        j := i-1;
+        /* shift all the elements to the right*/
+        WHILE (j >= 0 && tab[j] > unsortedElem ) DO
+            tab[j+1] := tab[j];
+            j := j-1;
+        END_WHILE
+        /* insert unsorted elem to correct position */
+        tab[j+1]:= unsortedElem;
+    END_FOR
+END
+
+/* read elem of tab*/
+PROCEDURE read_array(var t: ARRAY_OF INTEGER)
+VAR
+    i: INTEGER;
+BEGIN
+    FOR i FROM 0 TO t.length-1 STEP 1  DO
+        read(t[i])
+    END_FOR
+END
+
+/* write elem of tab*/
+PROCEDURE write_array(var t: ARRAY_OF INTEGER)
+VAR
+    i: INTEGER;
+BEGIN
+    FOR i FROM 0 TO t.length-1 STEP 1  DO
+        write(t[i])
+    END_FOR
+END
+
+ALGORITHM Insertion_Sort_elem
+VAR
+    tab  : ARRAY_OF INTEGER;
+  
+BEGIN
+     //read elements of tab
+    read_array(tab);
+    //procedure
+    InsertionSort(tab);
+    //write elements of tab
+    write_array(tab);
+END
